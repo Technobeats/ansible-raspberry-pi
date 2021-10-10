@@ -1,0 +1,21 @@
+services:
+  pihole:
+    cap_add:
+      - NET_ADMIN
+    container_name: pihole
+    env_file:
+      - variables.env
+    environment:
+      TZ: America/Chicago
+    image: "pihole/pihole:latest"
+
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "67:67/udp"
+      - "80:80/tcp"
+    restart: unless-stopped
+    volumes:
+      - "./etc-pihole/:/etc/pihole/"
+      - "./etc-dnsmasq.d/:/etc/dnsmasq.d/"
+
