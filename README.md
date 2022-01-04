@@ -1,12 +1,14 @@
 ## wip
 
+Fun project to install my new pi with ansible
+
 ansible-playbook:
 
 - install zsh
 - install docker
 - deploy pihole with docker-compose (wip)
 - setup duckdns (wip)
-- grafane project (wip)
+- install grafana project (wip)
 
 # pi
 
