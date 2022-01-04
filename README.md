@@ -1,3 +1,13 @@
+## wip
+
+ansible-playbook:
+
+- install zsh
+- install docker
+- deploy pihole with docker-compose (wip)
+- setup duckdns (wip)
+- grafane project (wip)
+
 # pi
 
 http://technobeats.duckdns.org/
