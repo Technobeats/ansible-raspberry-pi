@@ -4,8 +4,8 @@ Fun project to install projects on my new pi with ansible
 
 ansible-playbook (wip):
 
-- install zsh
-- install docker
+- install zsh (done)
+- install docker (done)
 - deploy pihole with docker-compose (wip)
 - setup duckdns (wip)
 - install grafana project (wip)
@@ -14,6 +14,9 @@ ansible-playbook (wip):
 # domoticz
 
     curl -L https://install.domoticz.com | bash
+    
+    (prefered docker)
+    https://hub.docker.com/r/domoticz/domoticz
 
 # pi
 
