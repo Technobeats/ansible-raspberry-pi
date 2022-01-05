@@ -1,0 +1,57 @@
+- name: Install docker dependencies
+  apt:
+    name: "{{item}}"
+    state: present
+    update_cache: yes
+  loop:
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - gnupg
+    - lsb-release
+
+- name: Add an Apt signing key to a specific keyring file
+  apt_key:
+    url: https://download.docker.com/linux/debian/gpg
+    keyring: /usr/share/keyrings/docker-archive-keyring.gpg
+
+- name: Install docker (stable) repo
+  ansible.builtin.command:
+    cmd: echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+# move to handler
+- name: Update apt-get repo and cache
+  apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
+  become: yes
+
+- name: Install docker dependencies
+  apt:
+    name: "{{item}}"
+    state: present
+    update_cache: yes
+  loop:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
+
+- name: Add user pi to docker user-group
+  user:
+    name: pi
+    group: docker
+
+- name: Install docker-compose dependencies
+  apt:
+    name: "{{item}}"
+    state: present
+    update_cache: yes
+  loop:
+    - libffi-dev
+    - libssl-dev
+    - python3-dev
+    - python3
+    - python3-pip
+
+- name: Install docker-compose
+  pip:
+    name: docker-compose
+    executable: pip3

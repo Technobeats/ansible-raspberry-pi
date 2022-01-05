@@ -8,7 +8,8 @@ ansible-playbook (wip):
 - install docker (done)
 - deploy pihole with docker-compose (wip)
 - setup duckdns (wip)
-- install grafana project (wip)
+- install grafana project (wip)  -> read p1 port with python -> push to elasticsearch <- pull to grafana
+  - more info: https://jensd.be/1205/linux/data-lezen-van-de-belgische-digitale-meter-met-de-p1-poort
 - install domoticz to read P1 port and monitor smart meter in real time (input / solar output)  
 
 # domoticz
