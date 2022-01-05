@@ -18,3 +18,5 @@
 - include: docker.yml
 
 - include: grafana.yml
+
+- include: elasticsearch.yml
