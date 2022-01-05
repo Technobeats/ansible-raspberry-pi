@@ -1,14 +1,19 @@
 ## wip
 
-Fun project to install my new pi with ansible
+Fun project to install projects on my new pi with ansible
 
-ansible-playbook:
+ansible-playbook (wip):
 
 - install zsh
 - install docker
 - deploy pihole with docker-compose (wip)
 - setup duckdns (wip)
 - install grafana project (wip)
+- install domoticz to read P1 port and monitor smart meter in real time (input / solar output)  
+
+# domoticz
+
+    curl -L https://install.domoticz.com | bash
 
 # pi
 
